@@ -1,0 +1,443 @@
+Assignment 1 - Max Trollinger
+
+Commands Used:
+ls, cd, pwd, cp, mv, rm, mkdir, rmdir, touch, cat, echo, sudo, apt-get, chmod, df
+
+# List files in the current directory
+ls
+
+# Print the current working directory
+pwd
+
+# Create a new directory
+mkdir test_directory
+
+# Change to the new directory
+cd test_directory
+
+# Create a new empty file
+touch test_file.txt
+
+# Display the contents of the new file (will be empty)
+cat test_file.txt
+
+# Write some text to the file
+echo "Hello, Ubuntu!" > test_file.txt
+
+# Display the updated contents of the file
+cat test_file.txt
+
+# Copy the file to a new file
+cp test_file.txt copied_file.txt
+
+# Rename the copied file
+mv copied_file.txt renamed_file.txt
+
+# Change permissions of the file (read-only for everyone)
+chmod 444 renamed_file.txt
+
+# Display disk space usage
+df -h
+
+# Delete the original file
+rm test_file.txt
+
+# Delete the renamed file
+rm renamed_file.txt
+
+# Go up one directory
+cd ..
+
+# Remove the test directory
+rmdir test_directory
+
+# Update the package list (requires sudo)
+sudo apt-get update
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+ 
+user@user-VirtualBox:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  snap  Templates  Videos
+user@user-VirtualBox:~$ cd
+user@user-VirtualBox:~$ cd Desktop
+user@user-VirtualBox:~/Desktop$ pwd
+/home/user/Desktop
+user@user-VirtualBox:~/Desktop$ cp
+cp: missing file operand
+Try 'cp --help' for more information.
+user@user-VirtualBox:~/Desktop$ mv
+mv: missing file operand
+Try 'mv --help' for more information.
+user@user-VirtualBox:~/Desktop$ mv --help
+Usage: mv [OPTION]... [-T] SOURCE DEST
+  or:  mv [OPTION]... SOURCE... DIRECTORY
+  or:  mv [OPTION]... -t DIRECTORY SOURCE...
+Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.
+ 
+Mandatory arguments to long options are mandatory for short options too.
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --debug                  explain how a file is copied.  Implies -v
+  -f, --force                  do not prompt before overwriting
+  -i, --interactive            prompt before overwrite
+  -n, --no-clobber             do not overwrite an existing file
+If you specify more than one of -i, -f, -n, only the final one takes effect.
+      --no-copy                do not copy if renaming fails
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  move all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  --update[=UPDATE]            control which existing files are updated;
+                                 UPDATE={all,none,older(default)}.  See below
+  -u                           equivalent to --update[=older]
+  -v, --verbose                explain what is being done
+  -Z, --context                set SELinux security context of destination
+                                 file to default type
+      --help        display this help and exit
+      --version     output version information and exit
+ 
+UPDATE controls which existing files in the destination are replaced.
+'all' is the default operation when an --update option is not specified,
+and results in all existing files in the destination being replaced.
+'none' is similar to the --no-clobber option, in that no files in the
+destination are replaced, but also skipped files do not induce a failure.
+'older' is the default operation when --update is specified, and results
+in files being replaced if they're older than the corresponding source file.
+ 
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+ 
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+ 
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/mv>
+or available locally via: info '(coreutils) mv invocation'
+ 
+
+Snippet of terminal above.
+
+C Code Compilation
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+ 
+user@user-VirtualBox:~$ sudo apt update
+[sudo] password for user: 
+Warning: The unit file, source configuration file or drop-ins of apt-news.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+Warning: The unit file, source configuration file or drop-ins of esm-cache.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Get:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Get:5 http://us.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [469 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [7,768 B]
+Get:7 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [337 kB]
+Fetched 940 kB in 5s (192 kB/s)                                
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+user@user-VirtualBox:~$ sudo apt install gcc
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu gcc-13
+  gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu libasan8 libbinutils libcc1-0
+  libctf-nobfd0 libctf0 libgcc-13-dev libgprofng0 libhwasan0 libitm1 liblsan0
+  libquadmath0 libsframe1 libtsan2 libubsan1
+Suggested packages:
+  binutils-doc gprofng-gui gcc-multilib make autoconf automake libtool flex
+  bison gcc-doc gcc-13-multilib gcc-13-doc gcc-13-locales gdb-x86-64-linux-gnu
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu gcc gcc-13
+  gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu libasan8 libbinutils libcc1-0
+  libctf-nobfd0 libctf0 libgcc-13-dev libgprofng0 libhwasan0 libitm1 liblsan0
+  libquadmath0 libsframe1 libtsan2 libubsan1
+0 upgraded, 21 newly installed, 0 to remove and 3 not upgraded.
+Need to get 39.5 MB of archives.
+After this operation, 144 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us.archive.ubuntu.com/ubuntu noble/main amd64 binutils-common amd64 2.42-4ubuntu2 [239 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libsframe1 amd64 2.42-4ubuntu2 [14.8 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libbinutils amd64 2.42-4ubuntu2 [572 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libctf-nobfd0 amd64 2.42-4ubuntu2 [97.1 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libctf0 amd64 2.42-4ubuntu2 [94.5 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libgprofng0 amd64 2.42-4ubuntu2 [851 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu noble/main amd64 binutils-x86-64-linux-gnu amd64 2.42-4ubuntu2 [2,469 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu noble/main amd64 binutils amd64 2.42-4ubuntu2 [18.0 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libcc1-0 amd64 14-20240412-0ubuntu1 [47.7 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libitm1 amd64 14-20240412-0ubuntu1 [28.9 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libasan8 amd64 14-20240412-0ubuntu1 [3,024 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu noble/main amd64 liblsan0 amd64 14-20240412-0ubuntu1 [1,313 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libtsan2 amd64 14-20240412-0ubuntu1 [2,736 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libubsan1 amd64 14-20240412-0ubuntu1 [1,175 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libhwasan0 amd64 14-20240412-0ubuntu1 [1,632 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libquadmath0 amd64 14-20240412-0ubuntu1 [153 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libgcc-13-dev amd64 13.2.0-23ubuntu4 [2,688 kB]
+Get:18 http://us.archive.ubuntu.com/ubuntu noble/main amd64 gcc-13-x86-64-linux-gnu amd64 13.2.0-23ubuntu4 [21.9 MB]
+Get:19 http://us.archive.ubuntu.com/ubuntu noble/main amd64 gcc-13 amd64 13.2.0-23ubuntu4 [482 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu noble/main amd64 gcc-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [1,212 B]
+Get:21 http://us.archive.ubuntu.com/ubuntu noble/main amd64 gcc amd64 4:13.2.0-7ubuntu1 [5,018 B]
+Fetched 39.5 MB in 3s (14.8 MB/s)
+Selecting previously unselected package binutils-common:amd64.
+(Reading database ... 148000 files and directories currently installed.)
+Preparing to unpack .../00-binutils-common_2.42-4ubuntu2_amd64.deb ...
+Unpacking binutils-common:amd64 (2.42-4ubuntu2) ...
+Selecting previously unselected package libsframe1:amd64.
+Preparing to unpack .../01-libsframe1_2.42-4ubuntu2_amd64.deb ...
+Unpacking libsframe1:amd64 (2.42-4ubuntu2) ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../02-libbinutils_2.42-4ubuntu2_amd64.deb ...
+Unpacking libbinutils:amd64 (2.42-4ubuntu2) ...
+Selecting previously unselected package libctf-nobfd0:amd64.
+Preparing to unpack .../03-libctf-nobfd0_2.42-4ubuntu2_amd64.deb ...
+Unpacking libctf-nobfd0:amd64 (2.42-4ubuntu2) ...
+Selecting previously unselected package libctf0:amd64.
+Preparing to unpack .../04-libctf0_2.42-4ubuntu2_amd64.deb ...
+Unpacking libctf0:amd64 (2.42-4ubuntu2) ...
+Selecting previously unselected package libgprofng0:amd64.
+Preparing to unpack .../05-libgprofng0_2.42-4ubuntu2_amd64.deb ...
+Unpacking libgprofng0:amd64 (2.42-4ubuntu2) ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../06-binutils-x86-64-linux-gnu_2.42-4ubuntu2_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.42-4ubuntu2) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../07-binutils_2.42-4ubuntu2_amd64.deb ...
+Unpacking binutils (2.42-4ubuntu2) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../08-libcc1-0_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking libcc1-0:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../09-libitm1_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking libitm1:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package libasan8:amd64.
+Preparing to unpack .../10-libasan8_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking libasan8:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../11-liblsan0_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking liblsan0:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package libtsan2:amd64.
+Preparing to unpack .../12-libtsan2_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking libtsan2:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package libubsan1:amd64.
+Preparing to unpack .../13-libubsan1_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking libubsan1:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package libhwasan0:amd64.
+Preparing to unpack .../14-libhwasan0_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking libhwasan0:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../15-libquadmath0_14-20240412-0ubuntu1_amd64.deb ...
+Unpacking libquadmath0:amd64 (14-20240412-0ubuntu1) ...
+Selecting previously unselected package libgcc-13-dev:amd64.
+Preparing to unpack .../16-libgcc-13-dev_13.2.0-23ubuntu4_amd64.deb ...
+Unpacking libgcc-13-dev:amd64 (13.2.0-23ubuntu4) ...
+Selecting previously unselected package gcc-13-x86-64-linux-gnu.
+Preparing to unpack .../17-gcc-13-x86-64-linux-gnu_13.2.0-23ubuntu4_amd64.deb ..
+.
+Unpacking gcc-13-x86-64-linux-gnu (13.2.0-23ubuntu4) ...
+Selecting previously unselected package gcc-13.
+Preparing to unpack .../18-gcc-13_13.2.0-23ubuntu4_amd64.deb ...
+Unpacking gcc-13 (13.2.0-23ubuntu4) ...
+Selecting previously unselected package gcc-x86-64-linux-gnu.
+Preparing to unpack .../19-gcc-x86-64-linux-gnu_4%3a13.2.0-7ubuntu1_amd64.deb ..
+.
+Unpacking gcc-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../20-gcc_4%3a13.2.0-7ubuntu1_amd64.deb ...
+Unpacking gcc (4:13.2.0-7ubuntu1) ...
+Setting up binutils-common:amd64 (2.42-4ubuntu2) ...
+Setting up libctf-nobfd0:amd64 (2.42-4ubuntu2) ...
+Setting up libsframe1:amd64 (2.42-4ubuntu2) ...
+Setting up libquadmath0:amd64 (14-20240412-0ubuntu1) ...
+Setting up libubsan1:amd64 (14-20240412-0ubuntu1) ...
+Setting up libhwasan0:amd64 (14-20240412-0ubuntu1) ...
+Setting up libasan8:amd64 (14-20240412-0ubuntu1) ...
+Setting up libtsan2:amd64 (14-20240412-0ubuntu1) ...
+Setting up libbinutils:amd64 (2.42-4ubuntu2) ...
+Setting up libcc1-0:amd64 (14-20240412-0ubuntu1) ...
+Setting up liblsan0:amd64 (14-20240412-0ubuntu1) ...
+Setting up libitm1:amd64 (14-20240412-0ubuntu1) ...
+Setting up libctf0:amd64 (2.42-4ubuntu2) ...
+Setting up libgprofng0:amd64 (2.42-4ubuntu2) ...
+Setting up libgcc-13-dev:amd64 (13.2.0-23ubuntu4) ...
+Setting up binutils-x86-64-linux-gnu (2.42-4ubuntu2) ...
+Setting up gcc-13-x86-64-linux-gnu (13.2.0-23ubuntu4) ...
+Setting up binutils (2.42-4ubuntu2) ...
+Setting up gcc-13 (13.2.0-23ubuntu4) ...
+Setting up gcc-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+Setting up gcc (4:13.2.0-7ubuntu1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.3) ...
+user@user-VirtualBox:~$ sudo apt install g++
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  g++-13 g++-13-x86-64-linux-gnu g++-x86-64-linux-gnu libstdc++-13-dev
+Suggested packages:
+  g++-multilib g++-13-multilib gcc-13-doc libstdc++-13-doc
+The following NEW packages will be installed:
+  g++ g++-13 g++-13-x86-64-linux-gnu g++-x86-64-linux-gnu libstdc++-13-dev
+0 upgraded, 5 newly installed, 0 to remove and 3 not upgraded.
+Need to get 15.0 MB of archives.
+After this operation, 59.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us.archive.ubuntu.com/ubuntu noble/main amd64 libstdc++-13-dev amd64 13.2.0-23ubuntu4 [2,399 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu noble/main amd64 g++-13-x86-64-linux-gnu amd64 13.2.0-23ubuntu4 [12.5 MB]
+Get:3 http://us.archive.ubuntu.com/ubuntu noble/main amd64 g++-13 amd64 13.2.0-23ubuntu4 [14.5 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu noble/main amd64 g++-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [964 B]
+Get:5 http://us.archive.ubuntu.com/ubuntu noble/main amd64 g++ amd64 4:13.2.0-7ubuntu1 [1,100 B]
+Fetched 15.0 MB in 16s (957 kB/s)                                              
+Selecting previously unselected package libstdc++-13-dev:amd64.
+(Reading database ... 148577 files and directories currently installed.)
+Preparing to unpack .../libstdc++-13-dev_13.2.0-23ubuntu4_amd64.deb ...
+Unpacking libstdc++-13-dev:amd64 (13.2.0-23ubuntu4) ...
+Selecting previously unselected package g++-13-x86-64-linux-gnu.
+Preparing to unpack .../g++-13-x86-64-linux-gnu_13.2.0-23ubuntu4_amd64.deb ...
+Unpacking g++-13-x86-64-linux-gnu (13.2.0-23ubuntu4) ...
+Selecting previously unselected package g++-13.
+Preparing to unpack .../g++-13_13.2.0-23ubuntu4_amd64.deb ...
+Unpacking g++-13 (13.2.0-23ubuntu4) ...
+Selecting previously unselected package g++-x86-64-linux-gnu.
+Preparing to unpack .../g++-x86-64-linux-gnu_4%3a13.2.0-7ubuntu1_amd64.deb ...
+Unpacking g++-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a13.2.0-7ubuntu1_amd64.deb ...
+Unpacking g++ (4:13.2.0-7ubuntu1) ...
+Setting up libstdc++-13-dev:amd64 (13.2.0-23ubuntu4) ...
+Setting up g++-13-x86-64-linux-gnu (13.2.0-23ubuntu4) ...
+Setting up g++-x86-64-linux-gnu (4:13.2.0-7ubuntu1) ...
+Setting up g++-13 (13.2.0-23ubuntu4) ...
+Setting up g++ (4:13.2.0-7ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mo
+de
+Processing triggers for man-db (2.12.0-4build2) ...
+user@user-VirtualBox:~$ touch helloworld.c
+user@user-VirtualBox:~$ gedit helloworld.c
+Command 'gedit' not found, but can be installed with:
+sudo snap install gedit  # version 46.1, or
+sudo apt  install gedit  # version 46.1-3
+See 'snap info gedit' for additional versions.
+user@user-VirtualBox:~$ sudo apt install gedit
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  gedit-common gir1.2-amtk-5 gir1.2-gtksource-300 gir1.2-tepl-6
+  libgedit-amtk-5-0 libgedit-amtk-5-common libgedit-gtksourceview-300-0
+  libgedit-gtksourceview-300-common libtepl-6-4 libtepl-common
+  python3-gi-cairo
+Suggested packages:
+  gedit-plugins
+The following NEW packages will be installed:
+  gedit gedit-common gir1.2-amtk-5 gir1.2-gtksource-300 gir1.2-tepl-6
+  libgedit-amtk-5-0 libgedit-amtk-5-common libgedit-gtksourceview-300-0
+  libgedit-gtksourceview-300-common libtepl-6-4 libtepl-common
+  python3-gi-cairo
+0 upgraded, 12 newly installed, 0 to remove and 3 not upgraded.
+Need to get 2,574 kB of archives.
+After this operation, 17.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 gedit-common all 46.2-2 [1,480 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 libgedit-gtksourceview-300-common all 299.0.4-3build1 [282 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 libgedit-gtksourceview-300-0 amd64 299.0.4-3build1 [224 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 gir1.2-gtksource-300 amd64 299.0.4-3build1 [19.9 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu noble/main amd64 python3-gi-cairo amd64 3.48.2-1 [8,132 B]
+Get:6 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 libgedit-amtk-5-common all 5.8.0-4build2 [23.9 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 libgedit-amtk-5-0 amd64 5.8.0-4build2 [25.7 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 gir1.2-amtk-5 amd64 5.8.0-4build2 [5,344 B]
+Get:9 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 libtepl-common all 6.8.0-2build4 [40.6 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 libtepl-6-4 amd64 6.8.0-2build4 [94.0 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 gir1.2-tepl-6 amd64 6.8.0-2build4 [14.2 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 gedit amd64 46.2-2 [356 kB]
+Fetched 2,574 kB in 1s (4,252 kB/s)
+Selecting previously unselected package gedit-common.
+(Reading database ... 149459 files and directories currently installed.)
+Preparing to unpack .../00-gedit-common_46.2-2_all.deb ...
+Unpacking gedit-common (46.2-2) ...
+Selecting previously unselected package libgedit-gtksourceview-300-common.
+Preparing to unpack .../01-libgedit-gtksourceview-300-common_299.0.4-3build1_all
+.deb ...
+Unpacking libgedit-gtksourceview-300-common (299.0.4-3build1) ...
+Selecting previously unselected package libgedit-gtksourceview-300-0:amd64.
+Preparing to unpack .../02-libgedit-gtksourceview-300-0_299.0.4-3build1_amd64.de
+b ...
+Unpacking libgedit-gtksourceview-300-0:amd64 (299.0.4-3build1) ...
+Selecting previously unselected package gir1.2-gtksource-300:amd64.
+Preparing to unpack .../03-gir1.2-gtksource-300_299.0.4-3build1_amd64.deb ...
+Unpacking gir1.2-gtksource-300:amd64 (299.0.4-3build1) ...
+Selecting previously unselected package python3-gi-cairo.
+Preparing to unpack .../04-python3-gi-cairo_3.48.2-1_amd64.deb ...
+Unpacking python3-gi-cairo (3.48.2-1) ...
+Selecting previously unselected package libgedit-amtk-5-common.
+Preparing to unpack .../05-libgedit-amtk-5-common_5.8.0-4build2_all.deb ...
+Unpacking libgedit-amtk-5-common (5.8.0-4build2) ...
+Selecting previously unselected package libgedit-amtk-5-0:amd64.
+Preparing to unpack .../06-libgedit-amtk-5-0_5.8.0-4build2_amd64.deb ...
+Unpacking libgedit-amtk-5-0:amd64 (5.8.0-4build2) ...
+Selecting previously unselected package gir1.2-amtk-5:amd64.
+Preparing to unpack .../07-gir1.2-amtk-5_5.8.0-4build2_amd64.deb ...
+Unpacking gir1.2-amtk-5:amd64 (5.8.0-4build2) ...
+Selecting previously unselected package libtepl-common.
+Preparing to unpack .../08-libtepl-common_6.8.0-2build4_all.deb ...
+Unpacking libtepl-common (6.8.0-2build4) ...
+Selecting previously unselected package libtepl-6-4:amd64.
+Preparing to unpack .../09-libtepl-6-4_6.8.0-2build4_amd64.deb ...
+Unpacking libtepl-6-4:amd64 (6.8.0-2build4) ...
+Selecting previously unselected package gir1.2-tepl-6:amd64.
+Preparing to unpack .../10-gir1.2-tepl-6_6.8.0-2build4_amd64.deb ...
+Unpacking gir1.2-tepl-6:amd64 (6.8.0-2build4) ...
+Selecting previously unselected package gedit.
+Preparing to unpack .../11-gedit_46.2-2_amd64.deb ...
+Unpacking gedit (46.2-2) ...
+Setting up gedit-common (46.2-2) ...
+Setting up libtepl-common (6.8.0-2build4) ...
+Setting up libgedit-gtksourceview-300-common (299.0.4-3build1) ...
+Setting up libgedit-amtk-5-common (5.8.0-4build2) ...
+Setting up libgedit-amtk-5-0:amd64 (5.8.0-4build2) ...
+Setting up python3-gi-cairo (3.48.2-1) ...
+Setting up libgedit-gtksourceview-300-0:amd64 (299.0.4-3build1) ...
+Setting up gir1.2-amtk-5:amd64 (5.8.0-4build2) ...
+Setting up gir1.2-gtksource-300:amd64 (299.0.4-3build1) ...
+Setting up libtepl-6-4:amd64 (6.8.0-2build4) ...
+Setting up gir1.2-tepl-6:amd64 (6.8.0-2build4) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.1) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Setting up gedit (46.2-2) ...
+/usr/lib/x86_64-linux-gnu/gedit/plugins/externaltools/library.py:212: SyntaxWarn
+ing: invalid escape sequence '\-'
+  RE_KEY = re.compile('^([a-zA-Z_][a-zA-Z0-9_.\-]*)(\[([a-zA-Z_@]+)\])?$')
+/usr/lib/x86_64-linux-gnu/gedit/plugins/snippets/substitutionparser.py:162: Synt
+axWarning: invalid escape sequence '\s'
+  match = re.match('\\\\?%s\s*' % self.REG_GROUP, tokens)
+user@user-VirtualBox:~$ gedit helloworld.c
+user@user-VirtualBox:~$ ls
+Desktop    Downloads     Music     Public  Templates
+Documents  helloworld.c  Pictures  snap    Videos
+user@user-VirtualBox:~$ file a.out
+a.out: cannot open `a.out' (No such file or directory)
+user@user-VirtualBox:~$ gcc helloworld.c
+user@user-VirtualBox:~$ file a.out
+a.out: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=a6906d7525249512c7280ecafbfbef6c361a49ab, for GNU/Linux 3.2.0, not stripped
+user@user-VirtualBox:~$ ls
+a.out    Documents  helloworld.c  Pictures  snap       Videos
+Desktop  Downloads  Music         Public    Templates
+user@user-VirtualBox:~$ ./a.out
+Hello World!user@user-VirtualBox:~$ gcc helloworld.c -o malware.x
+user@user-VirtualBox:~$ ls
+a.out    Documents  helloworld.c  Music     Public  Templates
+Desktop  Downloads  malware.x     Pictures  snap    Videos
+user@user-VirtualBox:~$ 
+ 
+
