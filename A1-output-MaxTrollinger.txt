@@ -1,3 +1,6 @@
+NOTE ALL WORK IS DISPLAYED IN MY GITHUB REPO:
+https://github.com/MaxTrollinger1/CSC466-Trollinger
+
 Assignment 1 - Max Trollinger
 
 Commands Used:
@@ -120,9 +123,9 @@ Full documentation <https://www.gnu.org/software/coreutils/mv>
 or available locally via: info '(coreutils) mv invocation'
  
 
-Snippet of terminal above.
+--- Snippet of terminal above.
 
-C Code Compilation
+--- C Code Compilation
 
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
@@ -439,5 +442,3 @@ user@user-VirtualBox:~$ ls
 a.out    Documents  helloworld.c  Music     Public  Templates
 Desktop  Downloads  malware.x     Pictures  snap    Videos
 user@user-VirtualBox:~$ 
- 
-
